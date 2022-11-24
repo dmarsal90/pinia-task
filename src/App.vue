@@ -8,7 +8,7 @@
     <!-- tasks list -->
     <div class="task-list">
       <div v-for="task in taskStore.tasks">
-        <taskDetails :task="task" />
+        <TaskDetails :task="task" />
       </div>
     </div>
   </main>
@@ -16,10 +16,10 @@
 
 <script>
 import { useTaskStore } from "./stores/TaskStore.js";
-import { taskDetails } from "./components/TaskDetails.vue"
+import TaskDetails from "./components/TaskDetails.vue";
 
 export default {
-  components: { taskDetails },
+  components: { TaskDetails },
   //composition api
   setup() {
     const taskStore = useTaskStore();
@@ -29,6 +29,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
