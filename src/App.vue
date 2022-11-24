@@ -1,21 +1,24 @@
 <template>
   <main>
-
     <!-- heading -->
     <header>
-      <img src="./assets/pinia-logo.svg" alt="pinia logo">
+      <img src="./assets/pinia-logo.svg" alt="pinia logo" />
       <h1>Pinia Tasks</h1>
     </header>
-
   </main>
 </template>
 
 <script>
-  export default {
-    
-  }
+import { useTaskStore } from '"./stores/TaskStore.js"';
+
+export default {
+  //composition api
+  setup() {
+    const taskStore = useTaskStore();
+
+    return { taskStore };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
