@@ -29,5 +29,10 @@ export const useTaskStore = defineStore("taskStore", {
         return t.id !== id
       });
     },
+    toggleFav(id){
+      const task = this.task.find(t => t.id === id)
+
+      task.isFav = !task.isFav
+    }
   },
 });
