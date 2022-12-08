@@ -24,5 +24,10 @@ export const useTaskStore = defineStore("taskStore", {
     addTask(task) {
       this.tasks.push(task);
     },
+    deleteTask(id) {
+      this.tasks = this.tasks.filter(t => {
+        return t.id !== id
+      });
+    },
   },
 });
